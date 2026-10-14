@@ -8,6 +8,22 @@ public class Main {
         List<String> linguagens = List.of("Python", "JavaScript", "Java");
         linguagens.forEach(l -> System.out.println(l));
 
+        int ano = 2026;
+        double versao = 21.0;
+        boolean aprendendo = true;
+        char inicial = 'D';
+        String nome = "DIO";
+        var cidade = "Sao Paulo";
+        final double PI = 3.14;
+
+        System.out.println("Nome: " + nome);
+        System.out.println("Ano: " + ano);
+        System.out.println("Versao: " + versao);
+        System.out.println("Aprendendo? " + aprendendo);
+        System.out.println("Inicial: " + inicial);
+        System.out.println("Cidade: " + cidade);
+        System.out.println("PI: " + PI);
+
         System.out.println(Mensagem.formatar("Primeiro projeto em Java!"));
     }
 }
