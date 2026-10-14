@@ -1,9 +1,11 @@
 import util.Mensagem;
 import java.util.List;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         // String e System ja funcionam sem import (java.lang e automatico)
+        Scanner leitor = new Scanner(System.in);
 
         List<String> linguagens = List.of("Python", "JavaScript", "Java");
         linguagens.forEach(l -> System.out.println(l));
@@ -24,6 +26,15 @@ public class Main {
         System.out.println("Cidade: " + cidade);
         System.out.println("PI: " + PI);
 
+        System.out.println("Qual é o seu nome?: ");
+        String outronome = leitor.nextLine();
+
+        System.out.println("Sua idade?: ");
+        int idadex = leitor.nextInt();
+
+        System.out.printf("Olá, seu nome é %s e sua idade é %s\n", outronome, idadex);
         System.out.println(Mensagem.formatar("Primeiro projeto em Java!"));
+
+        leitor.close();
     }
 }
