@@ -7,18 +7,18 @@ public class Exercicio4 {
 
         // 1) Ler a idade da primeira pessoa
         System.out.print("Digite a idade da primeira pessoa: ");
-        int idade1 = leitor._____();
+        int idade1 = leitor.nextInt();
 
         // 2) Ler a idade da segunda pessoa
         System.out.print("Digite a idade da segunda pessoa: ");
-        int idade2 = leitor._____();
+        int idade2 = leitor.nextInt();
 
         // 3) Calcular a diferenca entre as idades
         // Atencao: "diferenca" nao pode ser negativa!
-        int diferenca = _____;
+        int diferenca = Math.abs(idade1 - idade2);
 
         // 4) Exibir o resultado na tela
-        System.out.printf("A diferenca de idade e: %d anos", _____);
+        System.out.printf("A diferenca de idade e: %d anos", diferenca);
 
         leitor.close();
     }
