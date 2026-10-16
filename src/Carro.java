@@ -7,9 +7,9 @@ public class Carro {
 
     // Ao ser criado: desligado, em ponto morto e velocidade 0
     public Carro() {
-        ligado = ________;
-        marcha = ________;
-        velocidade = ________;
+        ligado = false;
+        marcha = 0;
+        velocidade = 0;
     }
 
     public void ligar() {
@@ -27,7 +27,7 @@ public class Carro {
             System.out.println("O carro já está desligado.");
             return;
         }
-        if (marcha ______ 0 || velocidade ______ 0) {
+        if (marcha != 0 || velocidade != 0) {
             System.out.println("Não é possível desligar!");
             System.out.println("Ponha em ponto morto e zere a velocidade primeiro.");
             return;
