@@ -35,12 +35,12 @@ public class Exercicio8 {
             // 3) Primeiro caso: numero MENOR que o inicial.
             //    Ele deve ser apenas IGNORADO (o programa continua!).
             //    Complete a condicao do if:
-            if (___________) {
+            if (numero < inicial) {
                 System.out.println("Numero menor que o inicial, ignorado!");
 
             // 4) Segundo caso: numero >= inicial E resto DIFERENTE de 0.
             //    Aqui o programa PARA: marque parar = true.
-            } else if (___________) {
+            } else if (numero >= inicial && numero % inicial != 0) {
                 System.out.println("Resto diferente de 0. Fim do programa!");
                 parar = true;
 
@@ -50,7 +50,7 @@ public class Exercicio8 {
                 System.out.println("Resto igual a 0, vamos continuar!");
             }
 
-        } while (___________);
+        } while (!parar);
 
         leitor.close();
     }
