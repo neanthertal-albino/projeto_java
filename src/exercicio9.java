@@ -39,15 +39,19 @@ public class exercicio9 {
                     break;
 
                 case 4:
-                    // TODO: criar método Sacar na ContaBancaria
+                    System.out.print("Quanto deseja sacar? ");
+                    double valorSaque = leitor.nextDouble();
+                    conta.Sacar(valorSaque);
                     break;
 
                 case 5:
-                    // TODO: criar método PagarBoleto na ContaBancaria
+                    System.out.print("Valor do boleto? ");
+                    double valorBoleto = leitor.nextDouble();
+                    conta.PagarBoleto(valorBoleto);
                     break;
 
                 case 6:
-                    // TODO: criar método que verifica se está usando cheque especial
+                    conta.VerificarChequeEspecial();
                     break;
 
                 case 0:
