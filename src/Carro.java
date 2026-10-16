@@ -106,6 +106,24 @@ public class Carro {
         System.out.println("Velocidade: " + velocidade + " km/h");
     }
 
+    // Só dá pra virar com velocidade entre 1 e 40 km/h
+    public void virar(String direcao) {
+        if (!ligado) {
+            System.out.println("O carro está desligado. Ligue-o primeiro.");
+            return;
+        }
+        if (velocidade < 1 || velocidade > 40) {
+            System.out.println("Não é possível virar! A velocidade deve estar entre 1 e 40 km/h.");
+            return;
+        }
+        if (direcao.equals("direita") || direcao.equals("esquerda")) {
+            System.out.println("Virando para a " + direcao + ".");
+        } else {
+            System.out.printf("Não existe direção %s\n", direcao);
+        }
+        
+    }
+
     // Mostra a velocidade atual (desligado não pode fazer nada)
     public void verificarVelocidade() {
         if (!ligado) {

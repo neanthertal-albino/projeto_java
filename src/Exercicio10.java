@@ -43,7 +43,9 @@ public class Exercicio10 {
                     break;
 
                 case 6:
-                    // TODO: virar
+                    System.out.print("Virar para (esquerda/direita): ");
+                    String direcao = leitor.next();
+                    carro.virar(direcao);
                     break;
 
                 case 7:
