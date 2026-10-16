@@ -43,13 +43,79 @@ public class MaquinaDeBanho {
             System.out.println("Não há pet na máquina.");
             return;
         }
-        if (______) {
+        if (!petLimpo) {
             maquinaSuja = true;
             System.out.println("O pet saiu sujo! A máquina precisa de limpeza.");
         } else {
             System.out.println("Pet retirado, limpinho!");
         }
         temPet = false;
+    }
+
+    // Coloca 2 litros de água, respeitando o máximo
+    public void abastecerAgua() {
+        int recarga = 2; // cada abastecimento coloca 2 litros
+        if (agua + recarga > 30) {
+            System.out.println("A água já está no nível máximo!");
+            return;
+        }
+        agua = agua + recarga;
+        System.out.println("Água abastecida. Nível atual: " + agua + " litros.");
+    }
+
+    // Coloca 2 litros de shampoo, respeitando o máximo
+    public void abastecerShampoo() {
+        int recarga = 2;
+        if (shampoo + recarga > 10) {
+            System.out.println("O shampoo já está no nível máximo!");
+            return;
+        }
+        shampoo = shampoo + recarga;
+        System.out.println("Shampoo abastecido. Nível atual: " + shampoo + " litros.");
+    }
+
+    public void verificarNivelAgua() {
+        System.out.println("Nível de água: " + agua + " litros (máximo 30).");
+    }
+
+    public void verificarNivelShampoo() {
+        System.out.println("Nível de shampoo: " + shampoo + " litros (máximo 10).");
+    }
+
+    // Dá banho no pet: consome 10 de água e 2 de shampoo
+    public void darBanho() {
+        if (!temPet) {
+            System.out.println("Não tem pet na máquina!");
+            return;
+        }
+        if (petLimpo) {
+            System.out.println("Esse pet já está limpo!");
+            return;
+        }
+        if (agua < 10) {
+            System.out.println("Água insuficiente! Abasteça a máquina.");
+            return;
+        }
+        if (shampoo < 2) {
+            System.out.println("Shampoo insuficiente! Abasteça a máquina.");
+            return;
+        }
+        agua = agua - 10;
+        shampoo = shampoo - 2;
+        petLimpo = true;
+        System.out.println("Banho realizado! Pet limpinho.");
+    }
+
+    // Limpa a máquina: consome 3 de água e 1 de shampoo
+    public void limparMaquina() {
+        if (agua < 3 || shampoo < 1) {
+            System.out.println("Sem água ou shampoo suficientes para limpar!");
+            return;
+        }
+        agua = agua - 3;
+        shampoo = shampoo - 1;
+        maquinaSuja = false;
+        System.out.println("Máquina limpa!");
     }
 
     // Informa se tem pet dentro da máquina

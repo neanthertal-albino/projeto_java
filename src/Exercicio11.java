@@ -31,23 +31,23 @@ public class Exercicio11 {
                     break;
 
                 case 3:
-                    // TODO: dar banho no pet
+                    maquina.darBanho();
                     break;
 
                 case 4:
-                    // TODO: abastecer com água
+                    maquina.abastecerAgua();
                     break;
 
                 case 5:
-                    // TODO: abastecer com shampoo
+                    maquina.abastecerShampoo();
                     break;
 
                 case 6:
-                    // TODO: verificar nível de água
+                    maquina.verificarNivelAgua();
                     break;
 
                 case 7:
-                    // TODO: verificar nível de shampoo
+                    maquina.verificarNivelShampoo();
                     break;
 
                 case 8:
@@ -55,7 +55,7 @@ public class Exercicio11 {
                     break;
 
                 case 9:
-                    // TODO: limpar máquina
+                    maquina.limparMaquina();
                     break;
 
                 case 0:
