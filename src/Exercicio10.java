@@ -37,7 +37,9 @@ public class Exercicio10 {
                     break;
 
                 case 5:
-                    // TODO: trocar marcha
+                    System.out.print("Qual marcha? (0 a 6): ");
+                    int novaMarcha = leitor.nextInt();
+                    carro.trocarMarcha(novaMarcha);
                     break;
 
                 case 6:

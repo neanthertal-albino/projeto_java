@@ -36,6 +36,25 @@ public class Carro {
         System.out.println("Carro desligado.");
     }
 
+    // Sobe ou desce UMA marcha por vez (0 = ponto morto, até 6)
+    public void trocarMarcha(int novaMarcha) {
+        if (!ligado) {
+            System.out.println("O carro está desligado. Ligue-o primeiro.");
+            return;
+        }
+        if (novaMarcha < 0 || novaMarcha > 6) {
+            System.out.println("Marcha inválida! O carro tem marchas 0 a 6.");
+            return;
+        }
+        int diferenca = novaMarcha - marcha;
+        if (diferenca > 1 || diferenca < -1) {
+            System.out.println("Não é permitido pular marcha!");
+            return;
+        }
+        marcha = novaMarcha;
+        System.out.println("Agora está na marcha: " + marcha);
+    }
+
     // Mostra a velocidade atual (desligado não pode fazer nada)
     public void verificarVelocidade() {
         if (!ligado) {
