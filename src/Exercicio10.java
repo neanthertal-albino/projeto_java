@@ -29,11 +29,11 @@ public class Exercicio10 {
                     break;
 
                 case 3:
-                    // TODO: acelerar
+                    carro.acelerar();
                     break;
 
                 case 4:
-                    // TODO: diminuir velocidade
+                    carro.diminuir();
                     break;
 
                 case 5:

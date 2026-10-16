@@ -55,6 +55,57 @@ public class Carro {
         System.out.println("Agora está na marcha: " + marcha);
     }
 
+    // Auxiliar: limite MÁXIMO da marcha atual (1ª: 20, 2ª: 40, ... 6ª: 120)
+    private int limiteSuperior() {
+        return marcha * 20;
+    }
+
+    // Auxiliar: limite MÍNIMO da marcha atual (1ª: 0, 2ª: 21, 3ª: 41, ...)
+    private int limiteInferior() {
+        if (marcha <= 1) {
+            return 0;
+        }
+        return (marcha - 1) * 20 + 1;
+    }
+
+    // Aumenta 1 km/h respeitando o limite da marcha atual
+    public void acelerar() {
+        if (!ligado) {
+            System.out.println("O carro está desligado. Ligue-o primeiro.");
+            return;
+        }
+        if (marcha == 0) {
+            System.out.println("Em ponto morto não é possível acelerar!");
+            return;
+        }
+        int novaVelocidade = velocidade + 1;
+        if (novaVelocidade > limiteSuperior()) {
+            System.out.println("Velocidade máxima da marcha " + marcha + " atingida!");
+            return;
+        }
+        velocidade = novaVelocidade;
+        System.out.println("Velocidade: " + velocidade + " km/h");
+    }
+
+    // Diminui 1 km/h respeitando o limite da marcha atual
+    public void diminuir() {
+        if (!ligado) {
+            System.out.println("O carro está desligado. Ligue-o primeiro.");
+            return;
+        }
+        if (velocidade == 0) {
+            System.out.println("A velocidade já é 0.");
+            return;
+        }
+        int novaVelocidade = velocidade - 1;
+        if (novaVelocidade < limiteInferior()) {
+            System.out.println("Velocidade mínima da marcha " + marcha + "! Reduza a marcha primeiro.");
+            return;
+        }
+        velocidade = novaVelocidade;
+        System.out.println("Velocidade: " + velocidade + " km/h");
+    }
+
     // Mostra a velocidade atual (desligado não pode fazer nada)
     public void verificarVelocidade() {
         if (!ligado) {
