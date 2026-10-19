@@ -24,6 +24,8 @@ public class Exercicio17 {
 
         // ---- 3) O PULO DO GATO: variável do tipo da INTERFACE ----
         FormaGeometrica forma = quad;
+        forma = circ;
+        forma = ret;
         System.out.println(forma.getNome() + " -> área: " + forma.calcularArea());
         // COMPLETAR: reaponte 'forma' pro retângulo e pro círculo.
         //           Em cada caso, imprima getNome() e calcularArea().
