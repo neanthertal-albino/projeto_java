@@ -10,12 +10,15 @@ public class Circulo implements FormaGeometrica {
     private double raio;
 
     // COMPLETAR: construtor com um parâmetro double chamado raio
+    public Circulo(Double raio){
+        this.raio = raio;
+    }
 
     @Override
     public double calcularArea() {
         // COMPLETAR: devolva a área do círculo: Math.PI * raio * raio
         // Dica: return Math.PI * raio * raio;
-        return 0; // troque pelo cálculo certo
+        return Math.PI * raio * raio; // troque pelo cálculo certo
     }
 
     @Override

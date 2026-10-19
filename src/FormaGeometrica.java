@@ -15,10 +15,11 @@ public interface FormaGeometrica {
     // COMPLETAR: declare o método calcularArea, que NÃO recebe nada
     // e devolve um double (o valor da área). Termina em ";"
     // Dica: double calcularArea();
-
+    double calcularArea();
 
     // COMPLETAR: declare o método getNome, que devolve um String
     // com o nome da figura ("Quadrado", "Retângulo"...).
     // Dica: String getNome();
+    String getNome();
 
 }
