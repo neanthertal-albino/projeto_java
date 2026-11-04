@@ -24,4 +24,9 @@ public interface ClienteService {
 
 	void deletar(Long id);
 
+	/**
+	 * Atualizacao parcial (PATCH): troca apenas o CEP do cliente.
+	 */
+	void atualizarCep(Long id, String cep);
+
 }

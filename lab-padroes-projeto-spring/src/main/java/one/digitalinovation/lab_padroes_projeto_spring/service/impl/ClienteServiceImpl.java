@@ -87,7 +87,33 @@ public class ClienteServiceImpl implements ClienteService {
 		clienteRepository.deleteById(id);
 	}
 
-	/**
+	@Override
+	public void atualizarCep(Long id, String cep) {
+		// TODO 7 (NOVO): trocar somente o CEP de um cliente que ja existe.
+		//
+		// CUIDADO: o CEP e o @Id do Endereco. Nao altere o cep do endereco
+		// antigo (JPA nao deixa trocar chave primaria); crie um Endereco novo.
+		//
+		// Passos:
+		// 1) Optional<Cliente> clienteBd = clienteRepository.findById(id);
+		// 2) if (clienteBd.isPresent()) {
+		//      Cliente cliente = clienteBd.get();
+		//      Endereco novoEndereco = new Endereco();
+		//      novoEndereco.setCep(cep);
+		//      cliente.setEndereco(novoEndereco);
+		//      salvarClienteComCep(cliente);  // reaproveita a regra do ViaCEP
+		//    }
+		Optional<Cliente> clienteBd = clienteRepository.findById(id);
+		if (clienteBd.isPresent()) {
+			Cliente cliente = clienteBd.get();
+			Endereco novoEndereco = new Endereco();
+			novoEndereco.setCep(cep);
+			cliente.setEndereco(novoEndereco);
+			salvarClienteComCep(cliente);
+		}
+	}
+
+	/*
 	 * Metodo auxiliar que salva o cliente garantindo o endereco correto.
 	 *
 	 * Regra (Facade + Strategy):

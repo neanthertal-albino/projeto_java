@@ -4,11 +4,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import one.digitalinovation.lab_padroes_projeto_spring.model.Cliente;
@@ -57,5 +59,16 @@ public class ClienteRestController {
 	public ResponseEntity<Void> deletar(@PathVariable Long id) {
 		clienteService.deletar(id);
 		return ResponseEntity.ok().build();
+	}
+
+	/**
+	 * PATCH /clientes/{id}/cep?cep=20040000
+	 *
+	 * Endpoint novo: atualiza SOMENTE o CEP do cliente (atualizacao parcial).
+	 */
+	@PatchMapping("/{id}/cep")
+	public ResponseEntity<Cliente> atualizarCep(@PathVariable Long id, @RequestParam String cep) {
+		clienteService.atualizarCep(id, cep);
+		return ResponseEntity.ok(clienteService.buscarPorId(id));
 	}
 }

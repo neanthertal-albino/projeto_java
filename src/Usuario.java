@@ -1,5 +1,5 @@
 // EXERCÍCIO 13 — Hierarquia de usuários de um sistema.
-// A classe Usuario é a CLASSE BASE: guarda o que TODO usuário tem em comum
+// A classe Usuario é a CLASSE BASE: guarda o que 
 // (nome, email, senha e se é administrador) e os métodos comuns.
 // Gerente, Vendedor e Atendente vão HERDAR dela com "extends".
 

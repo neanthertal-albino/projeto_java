@@ -44,7 +44,11 @@ Console do H2: `http://localhost:8080/h2-console`
 | GET | `/clientes/{id}` | busca um cliente por id |
 | POST | `/clientes` | cria um cliente |
 | PUT | `/clientes/{id}` | atualiza um cliente |
+| PATCH | `/clientes/{id}/cep?cep=20040000` | troca **somente** o CEP do cliente |
 | DELETE | `/clientes/{id}` | remove um cliente |
+
+A rota `PATCH` é uma atualização **parcial**: ela reaproveita o
+`salvarClienteComCep` para buscar o novo CEP no banco ou no ViaCEP.
 
 Exemplo de corpo para POST/PUT (o CEP é consultado no ViaCEP):
 
