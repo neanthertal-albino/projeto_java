@@ -14,7 +14,7 @@ public class Exercicio2 {
         double area = lado * lado;
 
         // 3) Exibir o resultado na tela
-        System.out.printf("A area do quadrado e: %d", area);
+        System.out.printf("A area do quadrado e: %.2f", area);
 
         leitor.close();
     }
