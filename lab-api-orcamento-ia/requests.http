@@ -1,0 +1,31 @@
+### 1) Criar transação (REST)
+POST http://localhost:8080/transactions
+Content-Type: application/json
+
+{
+  "description": "Mercado",
+  "amount": 12500,
+  "category": "GROCERIES"
+}
+
+### 2) Listar por categoria
+GET http://localhost:8080/transactions/GROCERIES
+
+### 3) Testar a IA sem áudio (tool calling)
+POST http://localhost:8080/assistant/text
+Content-Type: application/json
+
+{
+  "texto": "Gastei 60 reais em estacionamento"
+}
+
+### 4) Enviar áudio de verdade
+POST http://localhost:8080/assistant/voice
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="file"; filename="estacionamento.wav"
+Content-Type: audio/wav
+
+< ./estacionamento.wav
+--WebAppBoundary--
